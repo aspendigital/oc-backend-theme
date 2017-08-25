@@ -1,0 +1,197 @@
+/* *********************************
+ * OctoberCMS Admin Skin
+ * *********************************
+ */
+
+@defaultSystemFolder:  '../../../../../../../modules/system';
+@defaultBackendFolder: '../../../../../../../modules/backend';
+@defaultImagesFolder:  '../../../../../../../modules/backend/assets/images';
+@defaultFontsFolder:   '../../../../../../../modules/backend/assets/font';
+
+
+/**********************************
+ * Default OctoberCMS skin
+ *
+ */
+
+@import (less) "@{defaultBackendFolder}/assets/vendor/jcrop/css/jquery.Jcrop.min.css";
+@import (less) "@{defaultSystemFolder}/assets/vendor/prettify/prettify.css";
+@import (less) "@{defaultSystemFolder}/assets/vendor/prettify/theme-desert.css";
+
+@import "_base.less";
+
+
+/**********************************
+ * Skin edits
+ *
+ */
+
+
+/**********************************
+ * Top nav
+ *
+ */
+nav#layout-mainmenu.navbar .nav li {
+  padding-top: 17px;
+  padding-bottom: 17px;
+}
+
+nav#layout-mainmenu.navbar .nav li a {
+  display: block;
+}
+
+nav#layout-mainmenu.navbar .nav li {
+  padding: 0;
+
+  a { padding: 31px 0; }
+}
+
+nav#layout-mainmenu .nav-icon {
+  display: none;
+}
+
+
+/**********************************
+ * Sidebar
+ *
+ */
+.sidenav-tree ul.top-level > li > ul li a,
+.sidenav-tree,
+#layout-sidenav {
+  background-color: #111111;
+}
+
+
+/**********************************
+ * Site tree
+ *
+ */
+.sidenav-tree ul.top-level > li > div.group h3 {
+  background-color: #1D1D1D;
+}
+
+.sidenav-tree ul.top-level > li > ul li.active a,
+.sidenav-tree ul.top-level > li > ul li:hover a {
+  background-color: #2F2F2F;
+}
+
+.sidenav-tree ul.top-level > li > div.group:before,
+.sidenav-tree ul.top-level > li > div.group:after {
+  content: none;
+}
+
+
+/**********************************
+ * StaticPage Plugin edits
+ *
+ */
+
+.oc-bg-logo {
+  background-image: none; // Remove background image
+}
+
+.control-treeview ol > li > div:before,
+.control-treeview ol > li > ol > li > ol > li > div:before,
+.control-treeview ol > li.has-subitems > div:before {
+  background-image: none;
+  width: 0;
+  height: 0;
+}
+
+.control-treeview ol > li > div > a {
+  padding-left: 25px;
+}
+
+.control-treeview ol > li > ol > li > div > a {
+  padding-left: 45px;
+}
+
+.control-treeview ol > li > ol > li > ol > li > div > a {
+  padding-left: 55px;
+}
+
+.control-treeview ol > li > ol > li > ol > li > ol > li > div > a {
+  padding-left: 65px;
+}
+
+.control-treeview ol > li > ol > li > div > span.expand {
+  left: 22px;
+}
+
+.control-treeview ol > li > ol > li > ol > li > div > span.expand {
+  left: 32px;
+}
+
+
+/**********************************
+ * Page edit view
+ *
+ */
+
+.fancy-layout .form-tabless-fields input[type=text] {
+  font-size: 18px;
+}
+
+.fancy-layout .form-tabless-fields {
+  padding: 6px 23px 0 23px;
+}
+
+.fancy-layout .control-tabs.primary-tabs > div > ul.nav-tabs > li a {
+  padding: 0 16px;
+}
+
+
+/**********************************
+* Static Pages plugin sidebar
+*
+*/
+
+#layout-side-panel .fix-button { display: none !important; }
+
+
+/**********************************
+ * Field sizes
+ *
+ */
+
+.layout .field-richeditor.size-giant .redactor-editor {
+  height: 760px !important;
+}
+
+
+/**********************************
+ * Drag & Drop fix
+ *
+ */
+
+.control-treeview ol > li.placeholder {
+  height: 45px !important;
+  background: #ecf0f1;
+  display: block;
+  border: none;
+}
+
+.control-treeview ol > li.placeholder:after,
+.control-treeview ol > li.placeholder:before {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+/**********************************
+ * Hide "Hidden" and "Hide in navigation" fields from StaticPages plugin edit view
+ *
+ */
+
+// .tab-content [data-field-name="viewBag[is_hidden]"],
+.tab-content [data-field-name="viewBag[navigation_hidden]"] {
+  display: none;
+}
+
+
+/**********************************
+ * Fix editor styles when moved to tab
+ *
+ */
+
+.moved-to-secondary .field-richeditor { border-left: none !important; }
