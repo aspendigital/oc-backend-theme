@@ -206,3 +206,16 @@ nav#layout-mainmenu .nav-icon {
 .fancy-layout .control-tabs.secondary-content-tabs.has-tabs > div.tab-content {
   background-color: #ffffff;
 }
+
+
+/**********************************
+ * Fixes background color on StaticPage page nav (Settings, Meta) when
+ * .master-area is missing
+ *
+ */
+
+.fancy-layout .control-tabs.primary-tabs > div > ul.nav-tabs,
+.fancy-layout.control-tabs.primary-tabs > div > ul.nav-tabs {
+  transition: background-color 0.5s;
+  background: #e67e22;
+}
