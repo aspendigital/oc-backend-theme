@@ -14,7 +14,7 @@
 
 ```
 cd backend/skins/admin
-npm i
+yarn
 gulp
 ```
 
