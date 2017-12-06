@@ -1,4 +1,9 @@
 {
+  "scripts": {
+    "install-all": "yarn",
+    "dev": "gulp watch",
+    "build": "gulp"
+  },
   "devDependencies": {
     "gulp": "~3",
     "gulp-concat": "^2.3.3",
