@@ -13,11 +13,17 @@
 ## Development
 
 ```
-cd backend/skins/admin
+cd skins/admin
 yarn
-gulp
+npm run dev
 ```
 
+
+## Build
+
+```
+npm run build
+```
 
 ## Notes
 

@@ -224,3 +224,19 @@ nav#layout-mainmenu .nav-icon {
   width: 300px;
   max-width: 300px;
 }
+
+.field-mediafinder.style-image-single .find-object .icon-container {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+/***********************************
+ * Fixes invisible image previews by adding a background color to transparent
+ * png, gif and svg image previews
+ *
+ */
+.field-mediafinder.is-populated.is-image [src$=".svg"],
+.field-mediafinder.is-populated.is-image [src$=".png"],
+.field-mediafinder.is-populated.is-image [src$=".gif"] {
+  background-color: rgba(0,0,0,.2);
+}
