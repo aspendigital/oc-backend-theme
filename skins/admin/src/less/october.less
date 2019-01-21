@@ -249,3 +249,35 @@ nav#layout-mainmenu .nav-icon {
 .field-multilingual .ml-btn {
   overflow: hidden;
 }
+
+
+/***********************************
+ * Update master locale switcher on StaticPages
+ *
+ */
+
+/* Add button background color */
+.fancy-layout .form-buttons [data-control="master-locale-switcher"] .btn {
+  background-color: #d35400;
+  margin-right: 0;
+  opacity: 1;
+  padding: 6px 12px;
+  position: relative;
+  z-index: 3;
+}
+
+.fancy-layout .form-buttons [data-control="master-locale-switcher"] .btn:hover {
+  background-color: #8e3c04;
+}
+
+/* Update dropdown alignment */
+[data-control="master-locale-switcher"] .dropdown-menu {
+  left: auto;
+  right: 0;
+}
+
+[data-control="master-locale-switcher"] .dropdown-menu .dropdown-container > ul:before,
+[data-control="master-locale-switcher"] .dropdown-menu .dropdown-container > ul:after {
+  left: auto;
+  right: 15px;
+}
