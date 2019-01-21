@@ -9,12 +9,20 @@
 'backendSkin' => 'AspenDigital\Backend\Skins\Admin',
 ```
 
-
 ## Development
+
+Install dependencies:
 
 ```
 cd skins/admin
-yarn
+
+npm install
+
+```
+
+Watch files and auto-compile:
+
+```
 npm run dev
 ```
 
