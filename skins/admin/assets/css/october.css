@@ -5141,5 +5141,12 @@ nav#layout-mainmenu .nav-icon {
   left: auto;
   right: 15px;
 }
+/*
+  Allow primary-tab class to be used on backend form fields
+  Useful for richeditor fields with stretch="true"
+*/
+.widget-field.primary-tab {
+  padding: 0 !important;
+}
 
 /*# sourceMappingURL=october.css.map */
