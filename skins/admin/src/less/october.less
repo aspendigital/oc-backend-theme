@@ -231,14 +231,17 @@ nav#layout-mainmenu .nav-icon {
 
 
 /***********************************
- * Fixes invisible image previews by adding a background color to transparent
- * png, gif and svg image previews
+ * Fixes invisible image previews and richeditor images by adding a background
+ * color to png, gif and svg images
  *
  */
-.field-mediafinder.is-populated.is-image [src$=".svg"],
-.field-mediafinder.is-populated.is-image [src$=".png"],
-.field-mediafinder.is-populated.is-image [src$=".gif"] {
-  background-color: rgba(0,0,0,.2);
+.control-richeditor,
+.field-mediafinder.is-populated.is-image {
+  [src$=".svg"],
+  [src$=".png"],
+  [src$=".gif"] {
+    background-color: rgba(0,0,0,.2);
+  }
 }
 
 

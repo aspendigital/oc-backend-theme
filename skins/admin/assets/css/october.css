@@ -5099,12 +5099,15 @@ nav#layout-mainmenu .nav-icon {
   background-color: rgba(0, 0, 0, 0.5);
 }
 /***********************************
- * Fixes invisible image previews by adding a background color to transparent
- * png, gif and svg image previews
+ * Fixes invisible image previews and richeditor images by adding a background
+ * color to png, gif and svg images
  *
  */
+.control-richeditor [src$=".svg"],
 .field-mediafinder.is-populated.is-image [src$=".svg"],
+.control-richeditor [src$=".png"],
 .field-mediafinder.is-populated.is-image [src$=".png"],
+.control-richeditor [src$=".gif"],
 .field-mediafinder.is-populated.is-image [src$=".gif"] {
   background-color: rgba(0, 0, 0, 0.2);
 }
