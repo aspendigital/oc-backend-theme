@@ -292,3 +292,11 @@ nav#layout-mainmenu .nav-icon {
 .widget-field.primary-tab {
   padding: 0 !important;
 }
+
+/***********************************
+ * Adds class to DateTime field for ReadOnly=true
+ * Prevents the input field from receiving the click event
+ */
+.datetime-field-readonly-fix [readonly="readonly"] {
+  pointer-events: none;
+}
