@@ -1,20 +1,20 @@
 {
   "scripts": {
-    "install-all": "yarn",
     "dev": "gulp watch",
     "build": "gulp"
   },
   "devDependencies": {
-    "gulp": "~3",
-    "gulp-concat": "^2.3.3",
-    "gulp-less": "~3.0.3",
-    "gulp-livereload": "^2.1.0",
-    "gulp-clean-css": "^2.0.6",
-    "gulp-notify": "^1.4.0",
-    "gulp-rimraf": "^0.1.0",
-    "gulp-uglify": "^0.3.1",
+    "autoprefixer": "^9.4.2",
+    "browser-sync": "^2.18.12",
+    "cssnano": "^4.1.0",
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-less": "^4.0.1",
+    "gulp-notify": "^3.0.0",
+    "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.2.0",
-    "gulp-autoprefixer": "^2.1.0",
-    "gulp-sourcemaps": "^1.5.2"
+    "gulp-rimraf": "^0.2.1",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^3.0.0"
   }
 }

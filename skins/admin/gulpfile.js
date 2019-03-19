@@ -3,21 +3,21 @@
  *
  */
 
-var
-  gulp         = require('gulp'),
-  less         = require('gulp-less'),
-  cleancss     = require('gulp-clean-css'),
-  uglify       = require('gulp-uglify'),
-  rimraf       = require('gulp-rimraf'),
-  concat       = require('gulp-concat'),
-  notify       = require('gulp-notify'),
-  rename       = require('gulp-rename'),
-  path         = require('path'),
-  autoprefixer = require('gulp-autoprefixer'),
-  sourcemaps   = require('gulp-sourcemaps'),
-  livereload   = require('gulp-livereload');
+const gulp         = require('gulp');
+const less         = require('gulp-less');
+const browserSync  = require('browser-sync').create();
+const concat       = require('gulp-concat');
+const notifier     = require('node-notifier');
+const notify       = require('gulp-notify');
+const path         = require('path');
+const autoprefixer = require('autoprefixer');
+const cssnano      = require('cssnano');
+const postcss      = require('gulp-postcss');
+const rename       = require('gulp-rename');
+const sourcemaps   = require('gulp-sourcemaps');
+const rimraf       = require('gulp-rimraf');
 
-var paths = {
+var config = {
   src:     'src',
   dest:    'assets',
   vendor:  'node_modules',
@@ -31,32 +31,40 @@ var paths = {
  * Compiles and minifies stylesheets
  */
 
-gulp.task('css', ['css:compile', 'css:minify']);
-
-gulp.task('css:compile', function() {
+gulp.task('less:compile', () => {
   return gulp
-    .src(paths.src + '/less/october.less')
+    .src(config.src + '/less/october.less')
     .pipe(sourcemaps.init())
-    .pipe(less().on('error', notify.onError(function (error) {
-      return 'Error compiling LESS: ' + error.message;
-    })))
-    .pipe(autoprefixer())
+    .pipe(less())
+    .pipe(postcss([
+      autoprefixer({
+        browsers: ['last 2 versions'],
+      })
+    ]))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(paths.dest + '/css'))
-    .pipe(notify({ message: 'Successfully compiled LESS' }));
+    .pipe(gulp.dest(config.dest + '/css'));
 });
 
-gulp.task('css:minify', ['css:compile'], function() {
+gulp.task('less:minify', () => {
   return gulp
-    .src(paths.dest + '/css/october.css')
-    .pipe(cleancss({compatibility: 'ie9'}))
+    .src(config.dest + '/css/october.css')
+    .pipe(postcss([
+      cssnano(),
+    ]))
     .pipe(rename(function (path) {
       if(path.extname === '.css') {
         path.basename += '.min';
       }
     }))
-    .pipe(gulp.dest(paths.dest + '/css'))
-    .pipe(notify({ message: 'Successfully minified CSS' }));
+    .pipe(gulp.dest(config.dest + '/css'));
+});
+gulp.task('less:dev', gulp.series('less:compile'));
+
+gulp.task('less', gulp.series('less:compile', 'less:minify'), () => {
+  notifier.notify({
+    message: 'Successfully compiled LESS',
+  });
+  return gulp;
 });
 
 
@@ -66,31 +74,33 @@ gulp.task('css:minify', ['css:compile'], function() {
  * Concatenates and minifies scripts
  */
 
-gulp.task('js', function() {
+gulp.task('js', () => {
   var scripts = [
-    paths.modules + '/backend/assets/js/october-min.js',
-    paths.src + '/js/october-edits.js'
+    config.modules + '/backend/assets/js/october-min.js',
+    config.src + '/js/october-edits.js'
   ];
 
   return gulp
     .src(scripts)
     .pipe(concat('october-min.js'))
-    .pipe(gulp.dest(paths.dest + '/js'))
+    .pipe(gulp.dest(config.dest + '/js'))
     .pipe(notify({ message: 'Successfully compiled javascript' }));
 });
-
 
 
 /*
  * Cleanup
  */
 
-gulp.task('rimraf', function() {
+gulp.task('cleanup', () => {
   return gulp
     .src([
-      paths.dest + '/css',
-      paths.dest + '/js'
-    ], {read: false})
+      config.dest + '/css',
+      config.dest + '/js'
+    ], {
+      read: false,
+      allowEmpty: true,
+    })
     .pipe(rimraf());
 });
 
@@ -98,22 +108,26 @@ gulp.task('rimraf', function() {
 /*
  * Default task
  */
+let defaultTasks = ['less', 'js'];
 
-gulp.task('default', ['rimraf'], function() {
-  gulp.start('css', 'js');
+gulp.task('default', gulp.series('cleanup', gulp.parallel(defaultTasks)), () => {
+  return gulp.pipe(notify({ message: 'Successful build' }));
 });
 
 
-/*
+/**
  * Watch
  */
+gulp.task('watch', () => {
+  gulp.watch(config.src + '/less/**/*.less', gulp.parallel('less:dev'));
+  gulp.watch(config.src + '/js/**/*.js',  gulp.parallel('js'));
 
-gulp.task('watch', function() {
-  // Watch LESS and JS files
-  gulp.watch('src/less/**/*.less', ['css']);
-  gulp.watch('src/js/**/*.js', ['js']);
-
-  // Livereload
-  livereload.listen();
-  gulp.watch(paths.dest + '/**/*').on('change', livereload.changed);
+  // Browsersync
+  browserSync.init([
+    config.dest + '/js/**/*.js',
+    config.dest + '/css/**/*.css',
+    './**/*.htm',
+  ], {
+    proxy: 'localhost',
+  });
 });
