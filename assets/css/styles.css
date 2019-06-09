@@ -1,32 +1,7 @@
-/* *********************************
- * OctoberCMS Admin Skin
- * *********************************
- */
-
-@defaultSystemFolder:  '../../../../../../../modules/system';
-@defaultBackendFolder: '../../../../../../../modules/backend';
-@defaultImagesFolder:  '../../../../../../../modules/backend/assets/images';
-@defaultFontsFolder:   '../../../../../../../modules/backend/assets/font';
-
-
 /**********************************
- * Default OctoberCMS skin
+ * Extend Backend Skin
  *
  */
-
-@import (less) "@{defaultBackendFolder}/assets/vendor/jcrop/css/jquery.Jcrop.min.css";
-@import (less) "@{defaultSystemFolder}/assets/vendor/prettify/prettify.css";
-@import (less) "@{defaultSystemFolder}/assets/vendor/prettify/theme-desert.css";
-
-@import "_base.less";
-
-
-/**********************************
- * Skin edits
- *
- */
-
-
 /**********************************
  * Top nav
  *
@@ -42,14 +17,15 @@ nav#layout-mainmenu.navbar .nav li a {
 
 nav#layout-mainmenu.navbar .nav li {
   padding: 0;
+}
 
-  a { padding: 31px 0; }
+nav#layout-mainmenu.navbar .nav li a {
+  padding: 31px 0;
 }
 
 nav#layout-mainmenu .nav-icon {
   display: none;
 }
-
 
 /**********************************
  * Sidebar
@@ -60,7 +36,6 @@ nav#layout-mainmenu .nav-icon {
 #layout-sidenav {
   background-color: #111111;
 }
-
 
 /**********************************
  * Site tree
@@ -80,14 +55,12 @@ nav#layout-mainmenu .nav-icon {
   content: none;
 }
 
-
 /**********************************
  * StaticPage Plugin edits
  *
  */
-
 .oc-bg-logo {
-  background-image: none; // Remove background image
+  background-image: none;
 }
 
 .control-treeview ol > li > div:before,
@@ -122,12 +95,10 @@ nav#layout-mainmenu .nav-icon {
   left: 32px;
 }
 
-
 /**********************************
  * Page edit view
  *
  */
-
 .fancy-layout .form-tabless-fields input[type=text] {
   font-size: 18px;
 }
@@ -140,30 +111,26 @@ nav#layout-mainmenu .nav-icon {
   padding: 0 16px;
 }
 
-
 /**********************************
 * Static Pages plugin sidebar
 *
 */
-
-#layout-side-panel .fix-button { display: none !important; }
-
+#layout-side-panel .fix-button {
+  display: none !important;
+}
 
 /**********************************
  * Field sizes
  *
  */
-
 .layout .field-richeditor.size-giant .redactor-editor {
   height: 760px !important;
 }
-
 
 /**********************************
  * Drag & Drop fix
  *
  */
-
 .control-treeview ol > li.placeholder {
   height: 45px !important;
   background: #ecf0f1;
@@ -177,43 +144,36 @@ nav#layout-mainmenu .nav-icon {
   transform: translateY(-50%);
 }
 
-
 /**********************************
  * Hide "Hidden" and "Hide in navigation" fields from StaticPages plugin edit view
  *
  */
-
-// .tab-content [data-field-name="viewBag[is_hidden]"],
 .tab-content [data-field-name="viewBag[navigation_hidden]"] {
   display: none;
 }
-
 
 /**********************************
  * Fix editor styles when moved to tab
  *
  */
-
-.moved-to-secondary .field-richeditor { border-left: none !important; }
-
+.moved-to-secondary .field-richeditor {
+  border-left: none !important;
+}
 
 /**********************************
  * Fixes StaticPage background when using variable fields along with span=left
  * or span=right to position field
  *
  */
-
 .fancy-layout .control-tabs.secondary-content-tabs.has-tabs > div.tab-content {
   background-color: #ffffff;
 }
-
 
 /**********************************
  * Fixes background color on StaticPage page nav (Settings, Meta) when
  * .master-area is missing
  *
  */
-
 .fancy-layout .control-tabs.primary-tabs > div > ul.nav-tabs,
 .fancy-layout.control-tabs.primary-tabs > div > ul.nav-tabs {
   transition: background-color 0.5s;
@@ -229,21 +189,19 @@ nav#layout-mainmenu .nav-icon {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-
 /***********************************
  * Fixes invisible image previews and richeditor images by adding a background
  * color to png, gif and svg images
  *
  */
-.control-richeditor,
-.field-mediafinder.is-populated.is-image {
-  [src$=".svg"],
-  [src$=".png"],
-  [src$=".gif"] {
-    background-color: rgba(0,0,0,.2);
-  }
+.control-richeditor [src$=".svg"],
+.control-richeditor [src$=".png"],
+.control-richeditor [src$=".gif"],
+.field-mediafinder.is-populated.is-image [src$=".svg"],
+.field-mediafinder.is-populated.is-image [src$=".png"],
+.field-mediafinder.is-populated.is-image [src$=".gif"] {
+  background-color: rgba(0, 0, 0, 0.2);
 }
-
 
 /***********************************
  * Hide translate plugin backend field locale overflow for long locale slugs
@@ -253,12 +211,10 @@ nav#layout-mainmenu .nav-icon {
   overflow: hidden;
 }
 
-
 /***********************************
  * Update master locale switcher on StaticPages
  *
  */
-
 /* Add button background color */
 .fancy-layout .form-buttons [data-control="master-locale-switcher"] .btn {
   background-color: #d35400;
@@ -300,3 +256,5 @@ nav#layout-mainmenu .nav-icon {
 .datetime-field-readonly-fix [readonly="readonly"] {
   pointer-events: none;
 }
+
+/*# sourceMappingURL=styles.css.map */

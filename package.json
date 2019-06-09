@@ -1,0 +1,27 @@
+{
+  "scripts": {
+    "dev": "gulp watch",
+    "build": "gulp"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.4.2",
+    "browser-sync": "^2.26.5",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-rimraf": "^0.2.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-glob": "^1.0.9",
+    "gulp-scss-lint": "^0.7.2",
+    "gulp-scss-lint-stylish": "^1.0.1",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-util": "^3.0.7",
+    "node-notifier": "^5.2.1",
+    "node-sass": "^4.11.0",
+    "node-sass-tilde-importer": "^1.0.1",
+    "postcss-namespace": "^1.1.1",
+    "require-dir": "^1.0.0"
+  }
+}
