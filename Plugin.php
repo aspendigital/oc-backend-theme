@@ -32,7 +32,7 @@ class Plugin extends PluginBase
         }
 
         Event::listen('backend.page.beforeDisplay', function($controller, $action, $params) {
-            $controller->addCss('/plugins/aspendigital/backend/assets/css/styles.css', 'AspenDigital.Backend');
+            $controller->addCss('/plugins/aspendigital/backend/assets/css/styles.css', '1.0.1');
         });
     }
 }
