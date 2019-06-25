@@ -241,10 +241,10 @@ nav#layout-mainmenu .nav-icon {
   right: 15px;
 }
 
-/*
-  Allow primary-tab class to be used on backend form fields
-  Useful for richeditor fields with stretch="true"
-*/
+/***********************************
+ * Allow primary-tab class to be used on backend form fields
+ * Useful for richeditor fields with stretch="true"
+ */
 .widget-field.primary-tab {
   padding: 0 !important;
 }
@@ -255,6 +255,17 @@ nav#layout-mainmenu .nav-icon {
  */
 .datetime-field-readonly-fix [readonly="readonly"] {
   pointer-events: none;
+}
+
+/***********************************
+ * Removes bottom border from section title if it's the only form item
+ */
+.tab-pane .form-group.section-field:first-child:nth-last-child(2) {
+  padding-bottom: 0;
+}
+
+.tab-pane .form-group.section-field:first-child:nth-last-child(2) .field-section {
+  border-bottom: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */
