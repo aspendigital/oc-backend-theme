@@ -287,3 +287,10 @@ nav#layout-mainmenu .nav-icon {
 .tab-pane .form-group.section-field:first-child:nth-last-child(2) .field-section {
   border-bottom: 0;
 }
+
+/***********************************
+ * Remove background color from nested tabs
+ */
+.fancy-layout .control-tabs.primary-tabs > div > ul.nav-tabs {
+  background-color: transparent;
+}
