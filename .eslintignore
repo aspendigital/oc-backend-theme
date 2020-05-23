@@ -1,0 +1,5 @@
+gulpfile.js
+gulpfile.config.js
+gulp-tasks/**/*
+assets/**/*
+src/js/vendors/**/*
