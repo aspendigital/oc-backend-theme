@@ -334,8 +334,24 @@ nav#layout-mainmenu .nav-icon {
   margin-bottom: -4px;
 }
 
-div.nested-form .field-repeater-item .control-tabs >div >ul.nav-tabs >li a >span.title >span {
+div.nested-form:not(.panel-styles) .field-repeater-item .control-tabs >div >ul.nav-tabs >li a >span.title >span {
   background: #f9f9f9;
+}
+
+
+div.nested-form:not(.panel-styles) .field-repeater-item .control-tabs.primary-tabs > div > ul.nav-tabs > li a > span.title:before,
+div.nested-form:not(.panel-styles) .field-repeater-item .control-tabs.primary-tabs > div > ul.nav-tabs > li a > span.title:after {
+  background-color: #f9f9f9;
+}
+
+.fancy-layout [data-object-type="page"] div.nested-form:not(.panel-styles) .field-repeater-item .control-tabs.primary-tabs > div > ul.nav-tabs > li a > span.title:before,
+.fancy-layout [data-object-type="page"] div.nested-form:not(.panel-styles) .field-repeater-item .control-tabs.primary-tabs > div > ul.nav-tabs > li a > span.title:after {
+  background-color: #eeeeee;
+}
+
+.fancy-layout [data-object-type="page"] div.nested-form:not(.panel-styles) .field-repeater-item .control-tabs.primary-tabs >div >ul.nav-tabs >li.active a span.title:before,
+.fancy-layout [data-object-type="page"] div.nested-form:not(.panel-styles) .field-repeater-item .control-tabs.primary-tabs >div >ul.nav-tabs >li.active a span.title:after {
+  background-color: #f9f9f9;
 }
 
 .fancy-layout [data-object-type="page"] div.nested-form .field-repeater-item .control-tabs >div >ul.nav-tabs >li a >span.title >span {
