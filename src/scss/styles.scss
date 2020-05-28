@@ -291,6 +291,74 @@ nav#layout-mainmenu .nav-icon {
 /***********************************
  * Remove background color from nested tabs
  */
-.fancy-layout .control-tabs.primary-tabs > div > ul.nav-tabs {
+.fancy-layout [data-object-type="page"] .field-repeater-item .control-tabs.primary-tabs > div > ul.nav-tabs {
   background-color: transparent;
+}
+
+
+/***********************************
+ * Update nested tabs color
+ */
+.fancy-layout [data-object-type="page"] .field-repeater-item .control-tabs.primary-tabs >div >ul.nav-tabs >li a span.title,
+.fancy-layout [data-object-type="page"] .field-repeater-item .control-tabs.primary-tabs >div >ul.nav-tabs >li a span.title:before,
+.fancy-layout [data-object-type="page"] .field-repeater-item .control-tabs.primary-tabs >div >ul.nav-tabs >li a span.title:after {
+  background-color: #eeeeee;
+}
+
+.fancy-layout [data-object-type="page"] .field-repeater-item .control-tabs.primary-tabs >div >ul.nav-tabs >li.active a span.title,
+.fancy-layout [data-object-type="page"] .field-repeater-item .control-tabs.primary-tabs >div >ul.nav-tabs >li.active a span.title:before,
+.fancy-layout [data-object-type="page"] .field-repeater-item .control-tabs.primary-tabs >div >ul.nav-tabs >li.active a span.title:after {
+  background-color: #fafafa;
+}
+
+.fancy-layout [data-object-type="page"] .field-repeater-item .control-tabs.primary-tabs >div >ul.nav-tabs >li a span.title span {
+  position: relative;
+  top: 2px;
+}
+
+.field-repeater-item .control-tabs.primary-tabs >div >ul.nav-tabs >li a >span.title:before,
+.field-repeater-item .control-tabs.primary-tabs >div >ul.nav-tabs >li a >span.title:after {
+  background-color: #f5f5f5;
+}
+
+.field-repeater-item .control-tabs.primary-tabs >div >ul.nav-tabs >li.active a:before {
+  background-color: #f5f5f5;
+}
+
+.field-repeater-item .control-tabs >div >ul.nav-tabs >li a >span.title >span {
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 7px;
+  margin-left: -4px;
+  margin-right: -4px;
+  margin-bottom: -4px;
+}
+
+div.nested-form .field-repeater-item .control-tabs >div >ul.nav-tabs >li a >span.title >span {
+  background: #f9f9f9;
+}
+
+.fancy-layout [data-object-type="page"] div.nested-form .field-repeater-item .control-tabs >div >ul.nav-tabs >li a >span.title >span {
+  background-color: transparent;
+}
+
+div.nested-form .field-repeater-item .control-tabs.primary-tabs >div >ul.nav-tabs >li a {
+  padding-bottom: 0;
+}
+
+div.nested-form .field-repeater-item .control-tabs.primary-tabs >div >ul.nav-tabs >li.active a:before {
+  background-color: #f9f9f9;
+}
+
+div.nested-form.panel-styles .control-tabs.primary-tabs .nav-tabs >li >a >span.title:before,
+div.nested-form.panel-styles .control-tabs.primary-tabs .nav-tabs >li >a >span.title:after {
+  background-color: #f9f9f9;
+}
+
+div.nested-form .field-repeater-item .control-tabs >div.tab-content >div.tab-pane {
+  padding: 20px 20px 0 20px;
+}
+
+div.nested-form .field-repeater-item .control-tabs.has-tabs .tab-content.layout-row {
+  background-color: #f9f9f9;
 }
