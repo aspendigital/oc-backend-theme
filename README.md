@@ -16,12 +16,12 @@ npm i
 Watch files and auto-compile:
 
 ```
-npm run dev
+npm run watch
 ```
 
 
 ## Build
 
 ```
-npm run build
+npm run prod
 ```
